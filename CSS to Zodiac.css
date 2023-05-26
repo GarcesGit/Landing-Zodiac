@@ -3,15 +3,126 @@
 * {
 	box-sizing: border-box;
 }
-#parent {
-	margin: 0 auto;
-	width: 600px;
+
+body {
+	background-color: #160A17 ;
+	color: #AFA8FC;
+	text-align: center;
 }
+
 #input {
-	width: 100%;
-	margin-bottom: 10px;
-	padding: 10px;
+	width: 90%;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+	position: absolute;
+	top:    50px;
+	right:  10px;
+	left:   10px;
+	background-color: #AFA8FC;
+}
+
+input::placeholder {
+  color: white;
+}
+
+#radios {
+	position: absolute;
+	top:    100px;
+	right:  10px;
+	left:   10px;
+	font-size: 20px;
+}
+#radios input {
+	text-align: center;
+	color: #AFA8FC;
+	font-size: 30px;
+}
+
+#dates  {
+	display: flex; 
+	text-align: center;
+	position: absolute;
+	top:    120px;
+	left: 10px;
+	right: 10px;
+	font-size: 20px;
+	justify-content: center;
+}
+#dates p {
+text-align: center;
+	color: #ECECEC;
+	font-size: 15px;
+	margin-right: 140px ;
+
+}
+
+#info {
+	width: 70%;
+	font-size: 20px;
+	text-align: center;
+	color: #ECECEC;
+	margin: 30px auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+@keyframes color_sun {
+  0% { background-color: #160A17; }
+  50% { background-color: #AF3F61	; }
+  100% { background-color:  #160A17; }
+}
+@keyframes move {
+	from { margin-left: 0; }
+	to { margin-left: 900px; }
+}
+#sun {
+  border-radius: 50%;
+	width: 70px;
+	height: 70px;
+  -webkit-animation: color_sun 8s linear infinite,
+                      move 8s linear infinite;
+}
+
+@keyframes color_earth {
+  0% { background-color: #2A2471; }
+  50% { background-color: #F69CFC; }
+  100% { background-color:  #2A2471; }
+}
+@keyframes move_earth {
+  0% { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+#earth {
+  margin-left: 50px;
+  border-radius: 50%;
+	width: 50px;
+	height: 50px;
+  -webkit-animation: color_earth 10s linear infinite,
+                      move_earth 10s linear infinite;
+   transform-origin: 150px 150px 150px;
+}
+
+@keyframes color_moon {
+  0% { background-color: #6B1C70; }
+  50% { background-color: #95DDFD; }
+  100% { background-color:  #6B1C70; }
+}
+@keyframes move_moon {
+  0% { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+#moon {
+	margin-left: 500px;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+  -webkit-animation: color_moon 10s linear infinite,
+                      move_moon 10s linear infinite;
+   transform-origin: 150px 150px 150px;
+	 animation-direction: reverse;
 }
 
 </style>
-
