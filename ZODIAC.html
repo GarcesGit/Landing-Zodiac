@@ -8,8 +8,6 @@
   </head>
   <body>
 <br>
-<br>
-
 
 <div id="moon"> </div>
 <div id="earth"> </div>
@@ -29,9 +27,12 @@
   <p id='dateAfterTomorrow'></p>
 </div>
 
+<div id ="content">
   <h1 id="signName"></h1>
-  <p id="info"> <br> <br> <br> До полного солнечного затмения 8 апреля 2024 дней</p>
-  <div id="eclipse"> </div>
+  <p id="info"> <br> <br> <br> Полное солнечное затмение - 8 апреля 2024 года</p>
+</div>
+
+<img id="signPics" src="">
 
 <script>
 
@@ -145,16 +146,22 @@ function useData(name, pic) {
     if (radio.checked) {
     switch (radio.value) {
       case 'today':
+      dateAfterTomorrow.innerHTML = '';
+      dateTomorrow.innerHTML = '';
       dateToday.innerHTML = addZero(date.getDate()) + '-' + addZero(date.getMonth() + 1) + '-' +  date.getFullYear();
       info.innerHTML = data[name][0];
     	break;
 
     	case 'tomorrow':
+      dateToday.innerHTML = '';
+      dateAfterTomorrow.innerHTML = '';
       dateTomorrow.innerHTML = addZero(date.getDate()+1) + '-' + addZero(date.getMonth() + 1) + '-' +  date.getFullYear();
       info.innerHTML = data[name][1];
     	break;
 
     	case 'aftertomorrow':
+      dateToday.innerHTML = '';
+      dateTomorrow.innerHTML = '';
       dateAfterTomorrow.innerHTML = addZero(date.getDate()+2) + '-' + addZero(date.getMonth() + 1) + '-' +  date.getFullYear();
       info.innerHTML = data[name][2];
     	break;
@@ -164,6 +171,8 @@ function useData(name, pic) {
 }
 }
 
+//delete 2 drawDates
+
 function addDate(date) {
     return addZero(date.getDate()) + '-' + addZero(date.getMonth() + 1) + '-' +  date.getFullYear();
 }
@@ -172,10 +181,23 @@ function addZero(num) {
     return num <= 9 ? num = '0' + num : num;
 }
 
+function showPictures() {
+  let signPics = document.querySelector('#signPics');
+  let pictures = ['Cancer.jpg', 'Capricorn.jpg', 'Gemini.jpg', 'Leo.jpg', 'Libra.jpg', 'Pisces.jpg', 'Sagittarius.jpg', 'Scorpio.jpg', 'Taurus.jpg', 'Virgo.jpg', 'Aquarius.jpg', 'Aries.jpg'];
 
-/* Козерог
-12-24
-*/
+  let i = 1;
+  signPics.src = pictures[0];
+  window.setInterval(function() {
+    signPics.src = pictures[i];
+    i++;
+
+    if (i == pictures.length) {
+      i = 0;
+    }
+  }, 1000);
+}
+showPictures();
+
   </script>
 
 
