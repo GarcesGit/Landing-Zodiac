@@ -1,6 +1,4 @@
 
-<style>
-
 * {
 	box-sizing: border-box;
 }
@@ -12,11 +10,24 @@ body {
 #wrapper {
 	width: 900px;
 	height: 1500px;
-	margin: 10px auto;
+	margin: 0px auto;
 	background-color: black ;
 	color: #AFA8FC;
 	text-align: center;
 	position: relative;
+}
+
+#signDescriptionShow {
+	display: none;
+}
+
+#signDescriptionShow.active  {
+	position: absolute;
+	display: block;
+	margin: auto 150px auto 150px;
+	width: 600px;
+	top: 120px;
+	color: #F69CFC;
 }
 
 @keyframes color_sun {
@@ -126,13 +137,13 @@ input::placeholder {
 	box-sizing: border-box;
 	display: block;
 	width: 60px;
-  height: 20px;
+  height: 30px;
 	margin: 20px 20px 20px 20px;
   padding: 5px;
   font: 10px Arial;
-  text-decoration: none;
   color: white;
   background-color: black;
+	border: 1px solid black;
   box-shadow:  5px 5px 6px grey;
   transition:  all 0.5s ease 0s;
 }
@@ -173,16 +184,3 @@ h1 {
 #footer {
 	margin-top: 1200px;
 }
-
-&&&&&&&&&&&&&&&&&&&&&&&&&&
-#SignDescription {
-	display: none;
-	width: 200px;
-	height: 200px;
-	border: 1px solid green;
-}
-#SignDescription.active {
-	display: block;
-}
-
-</style>
